@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sushi/pages/food_detail_page.dart';
 import 'package:sushi/pages/intro_page.dart';
 import 'package:sushi/pages/menu_page.dart';
 

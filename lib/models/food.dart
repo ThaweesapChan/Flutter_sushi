@@ -10,7 +10,7 @@ class Food {
     this.imagePath = "inputImagePath",
     this.rating = "inputRating",
   });
-
+ 
   String get _Name => name;
   String get _Price => price;
   String get _ImagePath => imagePath;

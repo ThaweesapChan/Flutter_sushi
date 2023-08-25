@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sushi/components/food_tile.dart';
 import 'package:sushi/models/food.dart';
+import 'package:sushi/pages/food_detail_page.dart';
 import 'package:sushi/theme/colors.dart';
 import 'package:sushi/components/button.dart';
 
@@ -17,29 +18,40 @@ class _MenuPageState extends State<MenuPage> {
   List foodMenu = [
     //sushi
     Food(
-        name: "sushi",
+        name: "sushi ไข่ปลา",
         price: "20.00",
         imagePath: "lib/images/sushi.png",
         rating: "5"),
     //sushi2
     Food(
-        name: "sushi",
+        name: "sushi ปูอัด",
         price: "20.00",
         imagePath: "lib/images/sushi (1).png",
         rating: "5"),
     //sushi3
     Food(
-        name: "sushi",
+        name: "sushi ปลาแซลมอน",
         price: "20.00",
         imagePath: "lib/images/sushi (2).png",
         rating: "5"),
     //sushi4
     Food(
-        name: "sushi",
+        name: "sushi เซ็ตไข่ปลา",
         price: "20.00",
         imagePath: "lib/images/sushi (3).png",
         rating: "5"),
   ];
+
+  void navigateToFoodDetails(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FoodDetailsPage(
+          food: foodMenu[index],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -148,6 +160,7 @@ class _MenuPageState extends State<MenuPage> {
               // ทำให้ขอบของ list สุดลงเมื่อเลื่อนจนไอเทมครบจำนวน
               itemBuilder: (context, index) => FoodTile(
                 food: foodMenu[index],
+                onTap: () => navigateToFoodDetails(index),
               ),
             ),
           ),
